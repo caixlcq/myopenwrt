@@ -72,6 +72,17 @@ jobs:
         echo "硬盘详情："
         df -Th
         
+    - name: Start tmate session
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y tmate
+        tmate -S /tmp/tmate.sock new-session -d
+        tmate -S /tmp/tmate.sock wait tmate-ready
+        echo "SSH 地址:"
+        tmate -S /tmp/tmate.sock display -p '#{tmate_ssh}'
+        echo "Web 端地址:"
+        tmate -S /tmp/tmate.sock display -p '#{tmate_web}'
+        
     - name: 初始化编译环境
       env:
         DEBIAN_FRONTEND: noninteractive
@@ -122,7 +133,10 @@ jobs:
         chmod +x $DIY_P2_SH
         cd openwrt
         $GITHUB_WORKSPACE/$DIY_P2_SH
-
+        
+    - name: 休眠一小时
+      run: sleep 3600  # 休眠 1 小时（3600秒）
+  
     - name: 下载编译软件包
       id: package
       run: |
