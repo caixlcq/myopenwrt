@@ -67,12 +67,18 @@ jobs:
         sudo timedatectl set-timezone "$TZ"
         sudo mkdir -p /workdir
         sudo chown $USER:$GROUPS /workdir
+        
+    - name: 获取 OpenWrt 最新 tag
+      run: |
+        LATEST_TAG=$(git ls-remote --tags --sort="v:refname" $REPO_URL | awk -F/ '{print $NF}' | tail -n1)
+        echo "最新 OpenWrt Tag: $LATEST_TAG"
+        echo "REPO_BRANCH=$LATEST_TAG" >> $GITHUB_ENV
 
     - name: 克隆源码
       working-directory: /workdir
       run: |
         df -hT $PWD
-        git clone $REPO_URL -b $REPO_BRANCH openwrt
+        git clone --branch $REPO_BRANCH --depth=1 $REPO_URL openwrt
         ln -sf /workdir/openwrt $GITHUB_WORKSPACE/openwrt
 
     - name: 加载自定义feeds
