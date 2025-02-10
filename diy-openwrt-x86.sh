@@ -10,7 +10,7 @@ git clone --depth 1 https://github.com/jerrykuku/luci-theme-argon.git package/co
 #git clone --depth 1 https://github.com/UnblockNeteaseMusic/luci-app-unblockneteasemusic.git package/colin/luci-app-unblockneteasemusic
 git clone --depth 1 https://github.com/sirpdboy/netspeedtest.git package/colin/netspeedtest
 #git clone --depth 1 https://github.com/xiaorouji/openwrt-passwall package/colin/luci-app-passwall
-git clone --depth 1 https://github.com/xiaorouji/openwrt-passwall2 package/colin/luci-app-passwall2
+#git clone --depth 1 https://github.com/xiaorouji/openwrt-passwall2 package/colin/luci-app-passwall2
 #git clone --depth 1 https://github.com/xiaorouji/openwrt-passwall-packages.git package/colin/passwall-packages
 #git clone --depth 1 https://github.com/sbwml/luci-app-alist package/colin/luci-app-alist
 #git clone --depth 1 https://github.com/sbwml/luci-app-qbittorrent package/colin/luci-app-qbittorrent
@@ -40,8 +40,8 @@ git clone --depth 1 https://github.com/immortalwrt/packages colin-tmp8 && mv col
 # git clone --depth 1 https://github.com/coolsnowwolf/luci colin-tmp10 && mv colin-tmp10/applications/luci-app-turboacc package/colin/luci-app-turboacc
 git clone --depth 1 https://github.com/lisaac/luci-app-diskman package/colin/luci-app-diskman
 git clone --depth 1 https://github.com/asvow/luci-app-tailscale package/colin/luci-app-tailscale
-git clone --depth 1 https://github.com/Firsgith/luci-app-zerotier package/colin/luci-app-zerotier
-sed -i 's/PKG_VERSION:=[^ ]*-//g' package/colin/luci-app-zerotier/Makefile
+#git clone --depth 1 https://github.com/Firsgith/luci-app-zerotier package/colin/luci-app-zerotier
+#sed -i 's/PKG_VERSION:=[^ ]*-//g' package/colin/luci-app-zerotier/Makefile
 
 # Modify default IP（FROM 192.168.1.1 CHANGE TO 192.168.123.1）
 sed -i 's/192.168.1.1/192.168.25.115/g' package/base-files/files/bin/config_generate
