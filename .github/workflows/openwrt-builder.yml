@@ -77,16 +77,16 @@ jobs:
         echo "硬盘详情："
         df -Th
         
-    - name: Start tmate session
-      run: |
-        sudo apt-get update
-        sudo apt-get install -y tmate
-        tmate -S /tmp/tmate.sock new-session -d
-        tmate -S /tmp/tmate.sock wait tmate-ready
-        echo "SSH 地址:"
-        tmate -S /tmp/tmate.sock display -p '#{tmate_ssh}'
-        echo "Web 端地址:"
-        tmate -S /tmp/tmate.sock display -p '#{tmate_web}'
+    # - name: Start tmate session
+    #   run: |
+    #     sudo apt-get update
+    #     sudo apt-get install -y tmate
+    #     tmate -S /tmp/tmate.sock new-session -d
+    #     tmate -S /tmp/tmate.sock wait tmate-ready
+    #     echo "SSH 地址:"
+    #     tmate -S /tmp/tmate.sock display -p '#{tmate_ssh}'
+    #     echo "Web 端地址:"
+    #     tmate -S /tmp/tmate.sock display -p '#{tmate_web}'
         
     - name: 初始化编译环境
       env:
