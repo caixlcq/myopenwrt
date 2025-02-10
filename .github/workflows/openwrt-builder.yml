@@ -17,9 +17,13 @@ on:
   workflow_dispatch:
     inputs:
       ssh:
-        description: 'SSH connection to Actions'
+        description: 'Debug'
         required: false
         default: 'false'
+        type: choice
+        options:
+          - 'false'
+          - 'true'
 
 env:
   REPO_URL: https://github.com/openwrt/openwrt
