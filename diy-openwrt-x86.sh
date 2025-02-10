@@ -50,7 +50,7 @@ sed -i 's/192.168.1.1/192.168.25.115/g' package/base-files/files/bin/config_gene
 sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' ./feeds/luci/collections/luci/Makefile
 
 sed -i 's/invalid users = root/#invalid users = root/g' feeds/packages/net/samba4/files/smb.conf.template
-sed -i 's#mount -t cifs#mount.cifs#g' feeds/luci/applications/luci-app-cifs-mount/root/etc/init.d/cifs
+#sed -i 's#mount -t cifs#mount.cifs#g' feeds/luci/applications/luci-app-cifs-mount/root/etc/init.d/cifs
 
 # sed -i 's#../../#$(TOPDIR)/feeds/luci/#g' package/colin/luci-app-qbittorrent/Makefile
 sed -i 's#../../#$(TOPDIR)/feeds/luci/#g' package/colin/luci-app-vsftpd/Makefile
