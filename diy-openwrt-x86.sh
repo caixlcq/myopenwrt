@@ -62,5 +62,7 @@ sed -i 's#../../#$(TOPDIR)/feeds/luci/#g' package/colin/luci-app-cpufreq/Makefil
 # sed -i 's#../../#$(TOPDIR)/feeds/luci/#g' package/colin/luci-app-openvpn-server/Makefile
 sed -i '/\/etc\/init\.d\/tailscale/d;/\/etc\/config\/tailscale/d;' feeds/packages/net/tailscale/Makefile
 
+rm -rf ./colin-tmp*
+
 
 
