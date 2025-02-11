@@ -3139,7 +3139,7 @@ CONFIG_PACKAGE_kmod-mt792x-usb=y
 #
 # Go
 #
-# CONFIG_PACKAGE_golang is not set
+CONFIG_PACKAGE_golang=y
 
 #
 # Configuration
@@ -3154,7 +3154,7 @@ CONFIG_GOLANG_BUILD_CACHE_DIR=""
 # CONFIG_PACKAGE_golang-github-jedisct1-dnscrypt-proxy2-dev is not set
 # CONFIG_PACKAGE_golang-github-nextdns-nextdns-dev is not set
 # CONFIG_PACKAGE_golang-gitlab-yawning-obfs4-dev is not set
-# CONFIG_PACKAGE_golang-src is not set
+CONFIG_PACKAGE_golang-src=y
 # end of Go
 
 #
